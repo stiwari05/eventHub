@@ -22,7 +22,7 @@ namespace FunctionConsumer
                 {
                     string messageBody = Encoding.UTF8.GetString(eventData.Body.Array, eventData.Body.Offset, eventData.Body.Count);
 
-                     log.LogInformation($"C# Event Hub trigger function processed a message: {messageBody}");
+                     log.LogInformation($"Event Hub trigger function processed a message: {messageBody}");
                     await Task.Yield();
                 }
                 catch (Exception e)
