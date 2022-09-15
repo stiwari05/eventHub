@@ -22,14 +22,11 @@ namespace FunctionConsumer
                 {
                     string messageBody = Encoding.UTF8.GetString(eventData.Body.Array, eventData.Body.Offset, eventData.Body.Count);
 
-                    // Replace these two lines with your processing logic.
-                    log.LogInformation($"C# Event Hub trigger function processed a message: {messageBody}");
+                     log.LogInformation($"C# Event Hub trigger function processed a message: {messageBody}");
                     await Task.Yield();
                 }
                 catch (Exception e)
                 {
-                    // We need to keep processing the rest of the batch - capture this exception and continue.
-                    // Also, consider capturing details of the message that failed processing so it can be processed again later.
                     exceptions.Add(e);
                 }
             }
